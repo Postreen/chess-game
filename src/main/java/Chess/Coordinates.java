@@ -23,10 +23,11 @@ public class Coordinates {
         int f = file.ordinal() + shift.fileShift;
         int r = rank + shift.rankShift;
 
-        if ((f < 0) || (f > 7)) return false;
-        if ((r < 1) || (r > 8)) return false;
+        if ((f < 0) || (f > 7)) {
+            return false;
+        }
 
-        return true;
+        return (r >= 1) && (r <= 8);
     }
 
     @Override
